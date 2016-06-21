@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>gpio raspberrypi html</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="own.css" rel="stylesheet">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body onload='OnLoadIndex()'>
+
+      <div class='container'>
+
+
+        <div class="panel panel-default">
+          <div class="panel-heading"><span class="glyphicon glyphicon-transfer"></span> GPIO raspberry control</div>
+          <div class="panel-body">
+
+            <select id="pinselected">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+            </select>
+              <div onclick='pinON()' class='btn btn-success'>
+                  <span class="glyphicon glyphicon-ok"></span> encèn pin
+              </div>
+              <div onclick='pinOFF()' class='btn btn-danger'>
+                  <span class="glyphicon glyphicon-remove"></span> apaga pin
+              </div>
+
+              <div id='divlistPinsON' class="well"></div>
+          </div>
+        </div>
+
+      </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+
+  <script src='comunication.js'></script>
+
+
+  <script src="libraries/toastr.min.js"></script>
+  <link href="libraries/toastr.min.css" rel="stylesheet">
+
+
+
+  <script src="index.js"></script>
+
+</html>
