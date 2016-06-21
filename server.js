@@ -30,7 +30,7 @@ io.on('connection', function (socket) {
 	socket.on('newconnection', function (data,callback){
 		numconnections++;
 		console.log("numconnections: " + numconnections);
-		io.sockets.emit('numconnections',{numconnections}); //aqí envia la data
+		//io.sockets.emit('numconnections',{numconnections}); //aqí envia la data
 	});
 	socket.on('pinON', function (data,callback){
 		console.log(data + "--> ON");
@@ -45,7 +45,7 @@ io.on('connection', function (socket) {
       		gpio.close(data);						// Close pin
       	});
       });
-			io.sockets.emit('listPinsON',{listPinsON});
+			io.sockets.emit('listPinsON',listPinsON);
 		}else{
 			//pin already encès
 			io.sockets.emit("alreadyON", data);
@@ -68,7 +68,7 @@ io.on('connection', function (socket) {
 				gpio.close(data);						// Close pin
 			});
 		});
-		io.sockets.emit('listPinsON',{listPinsON}); //aqí envia la data
+		io.sockets.emit('listPinsON',listPinsON); //aqí envia la data
 	});
 
 
