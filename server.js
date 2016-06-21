@@ -2,7 +2,7 @@
 https://www.npmjs.com/package/pi-gpio
 */
 
-//var gpio = require("pi-gpio");
+var gpio = require("pi-gpio");
 
 
 var express=require('express'),
