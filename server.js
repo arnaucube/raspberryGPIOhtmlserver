@@ -40,13 +40,12 @@ io.on('connection', function (socket) {
 		{
 			listPinsON.push(data);
 			console.log("listPinsON: " + listPinsON);
-	        /*gpio.open(16, "output", function(err) {		// Open pin 16 for output
-	        	gpio.write(16, 1, function() {			// Set pin 16 high (1)
-	        		gpio.close(16);						// Close pin 16
-	        	});
-	        });*/
-	        //io.sockets.emit('pin16_1',{data}); //aqí envia la data
-					io.sockets.emit('listPinsON',{listPinsON});
+      gpio.open(data, "output", function(err) {		// Open pin per output
+      	gpio.write(data, 1, function() {			// Set pin high (1)
+      		gpio.close(data);						// Close pin
+      	});
+      });
+			io.sockets.emit('listPinsON',{listPinsON});
 		}else{
 			//pin already encès
 			io.sockets.emit("alreadyON", data);
@@ -64,12 +63,12 @@ io.on('connection', function (socket) {
 		}
 
 		console.log("listPinsON: " + listPinsON);
-				/*gpio.open(16, "output", function(err) {		// Open pin 16 for output
-					gpio.write(16, 1, function() {			// Set pin 16 high (1)
-						gpio.close(16);						// Close pin 16
-					});
-				});*/
-			io.sockets.emit('listPinsON',{listPinsON}); //aqí envia la data
+		gpio.open(data, "output", function(err) {		// Open pin per output
+			gpio.write(data, 0, function() {			// Set pin low (0)
+				gpio.close(data);						// Close pin
+			});
+		});
+		io.sockets.emit('listPinsON',{listPinsON}); //aqí envia la data
 	});
 
 
