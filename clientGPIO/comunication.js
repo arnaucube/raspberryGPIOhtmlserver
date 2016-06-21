@@ -25,8 +25,8 @@ socket.on('numconnections',function(data){
 });
 socket.on('listPinsON',function(data){
     //mRotationR(window[data.data]);
-    toastr.info("listPinsOn: " + data.listPinsON);
-    document.getElementById("divlistPinsON").innerHTML=data.listPinsON;
+    toastr.info("listPinsOn: " + data);
+    document.getElementById("divlistPinsON").innerHTML=data;
 });
 socket.on('alreadyON',function(data){
     //mRotationR(window[data.data]);
